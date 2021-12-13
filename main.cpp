@@ -3,7 +3,10 @@
 #include "Simulation/integratoreuler.h"
 #include "Simulation/system.h"
 #include "Display/drawingsupport.h"
+#include "Simulation/vector.h"
 #include <string>
+
+
 
 using namespace std;
 
