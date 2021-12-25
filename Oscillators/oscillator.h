@@ -24,6 +24,7 @@ struct Point
 class Oscillator : public Drawable
 {
 protected:
+    //! name of the oscillator
     std::string name;
 
     //!position vector
@@ -69,6 +70,9 @@ public:
 
     //!get phase space curve
     const std::vector<Point>& getCurve() const;
+
+    //!get name of oscillator
+    const std::string getName() const;
 
     //!display interesting quantites
     virtual std::ostream& display(std::ostream& output) const;

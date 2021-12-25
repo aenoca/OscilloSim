@@ -82,6 +82,11 @@ ostream& Oscillator::display(ostream& output) const
     return output;
 }
 
+const std::string Oscillator::getName() const
+{
+    return name;
+}
+
 ostream& operator<<(ostream& output, Oscillator const& osc)
 {
     return osc.display(output);

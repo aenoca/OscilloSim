@@ -25,25 +25,10 @@ void TextViewer::draw(const System & s)
     s.drawSystem();
 }
 
-void TextViewer::draw(const WeightedPendulum & p)
+void TextViewer::draw(const Oscillator & o)
 {
-    cout<<"#PendulePesant"<<endl;
-    ecris_Oscillo(p);
-}
-void TextViewer::draw(Spring const& r)
-{
-    cout<<"#Ressort"<<endl;
-    ecris_Oscillo(r);
-}
-void TextViewer::draw(DoublePendulum const& dp)
-{
-    cout<<"#DoublePendule"<<endl;
-    ecris_Oscillo(dp);
-}
-void TextViewer::draw(SpringPendulum const& pr)
-{
-    cout<<"#PenduleRessort"<<endl;
-    ecris_Oscillo(pr);
+    cout<<o.getName()<<endl;
+    ecris_Oscillo(o);
 }
 
 void TextViewer::drawPhase(Oscillator const& o)
