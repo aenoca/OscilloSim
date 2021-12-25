@@ -17,7 +17,7 @@ public:
     virtual ~DrawingSupport () {}
 
     //!called when a drawable is drawn
-    virtual void draw(System const&) = 0;
+    void draw(System const&);
     virtual void draw(Oscillator const&) = 0;
 
     //!called to draw phase space
@@ -34,7 +34,7 @@ class TextViewer : public DrawingSupport {
     virtual ~TextViewer() {}
 
     //!called to draw oscillators
-    virtual void draw(System const& j) override;
+    //virtual void draw(System const& j) override;
     virtual void draw(Oscillator const& o) override;
 
     //!called to draw the phase space
@@ -46,5 +46,19 @@ class TextViewer : public DrawingSupport {
 };
 
 void ecris_Oscillo(Oscillator const& o);
+
+//!class to draw each oscillator in its own file
+class FileLogger: public DrawingSupport {
+ public:
+    FileLogger() {};
+
+    //!called to draw oscillators
+    //virtual void draw(System const& j) override;
+    virtual void draw(Oscillator const& o) override;
+
+    //!called to draw the phase space
+    virtual void drawPhase(Oscillator const&) override;
+
+};
 
 #endif // DRAWINGSUPPORT_H

@@ -12,7 +12,8 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    TextViewer t(std::cout);
+    //TextViewer t(std::cout);
+    FileLogger t;
     WeightedPendulum p("pendule1", &t, 1.0, 1.0);
     Vector Q = {1.0};
     p.setQ(Q);
