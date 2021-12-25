@@ -6,9 +6,9 @@ using namespace std;
 
 //!call to base class oscillator here bc virtual inheritance
 //!1 here is the dof
-WeightedPendulum::WeightedPendulum(DrawingSupport* supp, double mass ,
+WeightedPendulum::WeightedPendulum(std::string n, DrawingSupport* supp, double mass ,
                  double length , double fr, Vector A, Vector o)
-:Oscillator(supp, 1, fr, A, o), Pendulum(supp, 1, fr, A, o), m(mass), l(length)
+:Oscillator(n, supp, 1, fr, A, o), Pendulum(n, supp, 1, fr, A, o), m(mass), l(length)
 {}
 
 //!equation of motion

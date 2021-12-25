@@ -5,9 +5,9 @@
 
 using namespace std;
 
-Spring::Spring(DrawingSupport* supp, double mass, double cst, double fr,
+Spring::Spring(std::string n, DrawingSupport* supp, double mass, double cst, double fr,
                Vector A, Vector o)
-:Oscillator(supp, 1, fr, A, o), m(mass), k(cst)
+:Oscillator(n, supp, 1, fr, A, o), m(mass), k(cst)
 {}
 
 Vector Spring::f(double t)

@@ -4,9 +4,9 @@
 using namespace std;
 
 //Constructeur avec nb_degre
-Oscillator::Oscillator(DrawingSupport* supp, size_t dof , double fr,
+Oscillator::Oscillator(std::string n, DrawingSupport* supp, size_t dof , double fr,
                        Vector A , Vector o)
-:Drawable(supp), P(dof), Q(dof)
+:Drawable(supp), name(n), P(dof), Q(dof)
 {
     if(o.size() != 3){
         throw string("Tried to initialize origin Vector O to size different than 3");

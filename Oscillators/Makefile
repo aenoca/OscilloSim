@@ -12,4 +12,4 @@ liboscillo.so: $(MODULES)
 	$(CC) -fpic -c $^ -o $@
 
 clean:
-	rm -r *.o
+	rm -r *.o liboscillo.so

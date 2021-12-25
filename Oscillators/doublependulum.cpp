@@ -4,11 +4,11 @@
 
 using namespace std;
 
-DoublePendulum::DoublePendulum(DrawingSupport* supp, double mass1,
+DoublePendulum::DoublePendulum(std::string n, DrawingSupport* supp, double mass1,
                                double mass2, double length1,
                                double length2, Vector A, Vector o)
-:Oscillator(supp, 2, 0, A, o),
- WeightedPendulum(supp, mass1, length1, 0, A, o), m2(mass2), l2(length2)
+:Oscillator(n, supp, 2, 0, A, o),
+ WeightedPendulum(n, supp, mass1, length1, 0, A, o), m2(mass2), l2(length2)
 {}
 
 Vector DoublePendulum::f(double t)

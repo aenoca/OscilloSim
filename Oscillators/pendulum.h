@@ -2,6 +2,7 @@
 #define PENDULUM_H
 
 #include "oscillator.h"
+#include <string>
 
 class DrawingSupport;
 class Vector;
@@ -13,7 +14,7 @@ class Pendulum : public virtual Oscillator
 {
 public:
     //Constructeur
-    Pendulum(DrawingSupport* supp, std::size_t dof ,
+    Pendulum(std::string n, DrawingSupport* supp, std::size_t dof ,
             double fr, Vector A , Vector o);
 };
 

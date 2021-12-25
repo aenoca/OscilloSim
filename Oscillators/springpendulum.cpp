@@ -4,11 +4,11 @@
 
 using namespace std;
 
-SpringPendulum::SpringPendulum(DrawingSupport* supp, double mass,
+SpringPendulum::SpringPendulum(std::string n, DrawingSupport* supp, double mass,
                                double cst, double length,
                                Vector A, Vector o)
-:Oscillator(supp, 2, 0, A, o), Pendulum(supp, 2, 0, A, o),
- Spring(supp, mass, cst), L(length)
+:Oscillator(n, supp, 2, 0, A, o), Pendulum(n, supp, 2, 0, A, o),
+ Spring(n, supp, mass, cst), L(length)
 {}
 
 Vector SpringPendulum::f(double t)

@@ -18,7 +18,7 @@ protected:
 
 public:
     //!constructor
-    Spring(DrawingSupport* supp, double m, double cst, double fr = 0,
+    Spring(std::string n, DrawingSupport* supp, double m, double cst, double fr = 0,
            Vector A = {1, 0, 0}, Vector o = {0, 0, 0});
 
     //!equation of motion

@@ -13,11 +13,11 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     TextViewer t(std::cout);
-    WeightedPendulum p(&t, 1.0, 1.0);
+    WeightedPendulum p("pendule1", &t, 1.0, 1.0);
     Vector Q = {1.0};
     p.setQ(Q);
 
-    DoublePendulum dp(&t, 1, 1, 1, 1);
+    DoublePendulum dp("doublependule1", &t, 1, 1, 1, 1);
     Vector Q2 = {1.0, -1.0};
     dp.setQ(Q2);
 

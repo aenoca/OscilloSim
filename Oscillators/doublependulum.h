@@ -17,7 +17,7 @@ private:
 
 public:
     //Constructeur
-    DoublePendulum(DrawingSupport* supp, double mass1, double mass2,
+    DoublePendulum(std::string n, DrawingSupport* supp, double mass1, double mass2,
                   double length1, double length2,
                   Vector A = {1, 0, 0}, Vector o = {0, 0, 0});
 

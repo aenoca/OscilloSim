@@ -15,7 +15,7 @@ private:
 
 public:
     //!constructor
-    SpringPendulum(DrawingSupport* supp, double masse,
+    SpringPendulum(std::string n, DrawingSupport* supp, double masse,
                    double cst, double length = 1,
                    Vector A = {1, 0, 0}, Vector o = {0, 0, 0});
 

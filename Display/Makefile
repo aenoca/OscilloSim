@@ -12,4 +12,4 @@ libdraw.so: $(MODULES)
 	$(CC) -fpic -c $^ -o $@
 
 clean:
-	rm -r *.o
+	rm -r *.o libdraw.so

@@ -17,7 +17,7 @@ protected:
     double l;
 public:
     //Constructeur
-    WeightedPendulum(DrawingSupport* supp, double mass ,
+    WeightedPendulum(std::string n, DrawingSupport* supp, double mass ,
                      double length , double fr = 0 ,
                      Vector A = {1, 0, 0}, Vector o = {0, 0, 0});
 

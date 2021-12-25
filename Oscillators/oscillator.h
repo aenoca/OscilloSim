@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <string>
 
 
 //#include "../Display/drawingsupport.h"
@@ -23,6 +24,8 @@ struct Point
 class Oscillator : public Drawable
 {
 protected:
+    std::string name;
+
     //!position vector
     Vector P;
 
@@ -42,7 +45,7 @@ protected:
     std::vector<Point> curve;
 public:
     //!constructor
-    Oscillator(DrawingSupport* supp, std::size_t dof = 1, double fr = 0,
+    Oscillator(std::string n, DrawingSupport* supp, std::size_t dof = 1, double fr = 0,
                Vector A = {0, 1, 0}, Vector o = {0, 0, 0});
 
     //!equation of motion
