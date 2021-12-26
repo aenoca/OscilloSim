@@ -3,9 +3,10 @@ CC = $(CXX)
 #CXXFLAGS = -std=c++17 -Wall
 #LDLIBS = -lm
 
-D=Display
-S=Simulation
-O=Oscillators
+T=../TextSim
+D=../Display
+S=../Simulation
+O=../Oscillators
 
 # $@ is the target of the rule
 # $^ all the prerequisites
@@ -14,26 +15,26 @@ OscilloSimText: main.o $(D)/libdraw.so $(O)/liboscillo.so $(S)/libsim.so
 	$(CC) $^ -o $@
 
 libs:
-	cd Display && make
-	cd .. 
-	cd Simulation && make
-	cd .. 
-	cd Oscillators && make
-	cd .. 
+	cd $(D) && make
+	cd $(T) 
+	cd $(S) && make
+	cd $(T) 
+	cd $(O) && make
+	cd $(T) 
 
 %.o: %.cpp
 	$(CC) -c $^ -o $@
 
 clean:
-	rm -r *.o OscilloSimText
+	rm -r *.o *.txt OscilloSimText
 
 cleanlibs:
-	cd Display && make clean
-	cd .. 
-	cd Simulation && make clean
-	cd .. 
-	cd Oscillators && make clean
-	cd .. 
+	cd $(D) && make clean
+	cd $(T) 
+	cd $(S) && make clean
+	cd $(T) 
+	cd $(O) && make clean
+	cd $(T) 
 
 
 # OscilloSimText: main.o system.o integratoreuler.o drawingsupport.o pendulum.o weightedpendulum.o doublependulum.o vector.o oscillator.o drawable.o constants.o
