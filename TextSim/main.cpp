@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
     SpringPendulum spp("springpendulum", &t, 1.0, 1.0, 1.0);
     Vector P4 = {1.0, 1.0};
-    spp.setP(P4)
+    spp.setP(P4);
 
     // 2 - add oscillators to system
     System s(&t, new IntegratorEuler());
