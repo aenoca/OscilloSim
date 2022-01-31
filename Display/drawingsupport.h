@@ -18,7 +18,11 @@ public:
 
     //!called when a drawable is drawn
     void draw(System const&);
-    virtual void draw(Oscillator const&) = 0;
+    //virtual void draw(Oscillator const&) = 0;
+    virtual void draw(WeightedPendulum const&) = 0;
+    virtual void draw(Spring const&) = 0;
+    virtual void draw(DoublePendulum const&) = 0;
+    virtual void draw(SpringPendulum const&) = 0;
 
     //!called to draw phase space
     virtual void drawPhase(Oscillator const&) = 0;
@@ -35,7 +39,12 @@ class TextViewer : public DrawingSupport {
 
     //!called to draw oscillators
     //virtual void draw(System const& j) override;
-    virtual void draw(Oscillator const& o) override;
+    void drawOsc(Oscillator const& o);
+
+    virtual void draw(WeightedPendulum const&) override;
+    virtual void draw(Spring const&) override;
+    virtual void draw(DoublePendulum const&) override;
+    virtual void draw(SpringPendulum const&) override;
 
     //!called to draw the phase space
     virtual void drawPhase(Oscillator const&) override;
@@ -54,7 +63,12 @@ class FileLogger: public DrawingSupport {
 
     //!called to draw oscillators
     //virtual void draw(System const& j) override;
-    virtual void draw(Oscillator const& o) override;
+    void drawOsc(Oscillator const& o);
+
+    virtual void draw(WeightedPendulum const&) override;
+    virtual void draw(Spring const&) override;
+    virtual void draw(DoublePendulum const&) override;
+    virtual void draw(SpringPendulum const&) override;
 
     //!called to draw the phase space
     virtual void drawPhase(Oscillator const&) override;

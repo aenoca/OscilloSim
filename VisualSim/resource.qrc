@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fragment_shader.glsl</file>
+        <file>vertex_shader.glsl</file>
+        <file>Icone.jpg</file>
+        <file>DoublePendulum.jpg</file>
+        <file>homepage.jpg</file>
+        <file>Spring.jpg</file>
+        <file>SpringPendulum.jpg</file>
+        <file>WeightedPendulum.jpg</file>
+    </qresource>
+</RCC>

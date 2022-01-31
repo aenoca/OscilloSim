@@ -43,6 +43,8 @@ public:
     //!returns scalar product with other vector
     double scalarProduct(Vector const& v2) const;
 
+    Vector crossProduct(Vector const& v2) const;
+
     //!returns opposite
     Vector opposite() const;
 
@@ -68,6 +70,9 @@ public:
 
     //!returns reference to index th element of vector
     double& operator[](std::size_t index);
+
+    //!returns reference to index th element of vector
+    double operator[](std::size_t index) const;
 
     //!compares two vectors, element by element
     bool operator==(Vector const& v2) const;
@@ -100,6 +105,9 @@ Vector operator+(Vector v, Vector const& v2);
 
 //!substracts two vectors
 Vector operator-(Vector v, Vector const& v2);
+
+//!cross product
+Vector operator^(Vector v, Vector const& v2);
 
 //!multiplies vector by constant
 Vector operator*(double d, Vector v);

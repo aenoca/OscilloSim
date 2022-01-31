@@ -22,8 +22,9 @@ TextViewer::TextViewer(std::ostream& output)
 : flot(output)
 {}
 
-void ecris_Oscillo(Oscillator const & o)
+void TextViewer::drawOsc(Oscillator const & o)
 {
+    cout<<o.getName()<<endl;
     cout<<o.getP()<<"\t #Parametre"<<endl;
     cout<<o.getQ()<<"\t #Vitesse"<<endl<<endl;
 }
@@ -33,18 +34,17 @@ void ecris_Oscillo(Oscillator const & o)
 //     s.drawSystem();
 // }
 
-void TextViewer::draw(const Oscillator & o)
-{
-    cout<<o.getName()<<endl;
-    ecris_Oscillo(o);
-}
+void TextViewer::draw(WeightedPendulum const& o) {drawOsc(o);}
+void TextViewer::draw(Spring const& o) {drawOsc(o);}
+void TextViewer::draw(DoublePendulum const& o) {drawOsc(o);}
+void TextViewer::draw(SpringPendulum const& o) {drawOsc(o);}
 
 void TextViewer::drawPhase(Oscillator const& o)
 {
     cout<<o.getP()[1]<<"    "<<o.getQ()[1]<<endl;
 }
 
-void FileLogger::draw(Oscillator const & s)
+void FileLogger::drawOsc(Oscillator const & s)
 {
     // for each oscillator, print P values in a file
     // print Q values in a file
@@ -58,6 +58,11 @@ void FileLogger::draw(Oscillator const & s)
     file_P.close();
     file_Q.close();
 }
+
+void FileLogger::draw(WeightedPendulum const& o) {drawOsc(o);}
+void FileLogger::draw(Spring const& o) {drawOsc(o);}
+void FileLogger::draw(DoublePendulum const& o) {drawOsc(o);}
+void FileLogger::draw(SpringPendulum const& o) {drawOsc(o);}
 
 void FileLogger::drawPhase(Oscillator const & s)
 {

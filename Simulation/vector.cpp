@@ -120,6 +120,24 @@ double Vector::scalarProduct(Vector const& v2) const
     }
 }
 
+Vector Vector::crossProduct(Vector const& v2) const
+{
+    if((v.size()!=3)||(v2.v.size()!=3))
+        {
+            throw string("Error, cross product with vectors of dim != 3");
+        }
+        else
+        {
+            Vector result(3);
+
+            result.v[0]=(v[1]*v2.v[2])-(v[2]*v2.v[1]);
+            result.v[1]=(v[2]*v2.v[0])-(v[0]*v2.v[2]);
+            result.v[2]=(v[0]*v2.v[1])-(v[1]*v2.v[0]);
+
+            return result;
+        }
+}
+
 //!returns opposite
 Vector Vector::opposite() const
 {
@@ -184,6 +202,12 @@ void Vector::display() const
 
 //!returns reference to index th element of vector
 double& Vector::operator[](std::size_t index)
+{
+    return v[index-1];
+}
+
+//!returns reference to index th element of vector
+double Vector::operator[](std::size_t index) const
 {
     return v[index-1];
 }
@@ -275,6 +299,11 @@ Vector operator+(Vector v, Vector const& v2)
 Vector operator-(Vector v, Vector const& v2)
 {
     return v-=v2;
+}
+
+Vector operator^(Vector v, Vector const& v2)
+{
+    return v.crossProduct(v2);
 }
 
 //!multiplies vector by constant

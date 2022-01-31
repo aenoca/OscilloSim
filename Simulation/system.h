@@ -4,6 +4,7 @@
 #include "../Display/drawable.h"
 #include <vector>
 #include <memory>
+#include "../Simulation/integratoreuler.h"
 
 class DrawingSupport;
 class Oscillator;
@@ -25,7 +26,7 @@ private:
 
 public:
     //!constructor
-    System(DrawingSupport* supp, Integrator* I);
+    System(DrawingSupport* supp, Integrator* I = new IntegratorEuler);
 
     //!we delete the copy constructor
     System(System& s) = delete;
