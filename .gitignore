@@ -34,3 +34,5 @@
 OscilloSimText
 .vscode/
 *.txt
+*.user
+Makefile
