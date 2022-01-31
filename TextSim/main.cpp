@@ -31,8 +31,8 @@ int main(int argc, char *argv[])
     sp.setQ(Q3);
 
     SpringPendulum spp("springpendulum", &t, 1.0, 1.0, 1.0);
-    Vector Q4 = {3.14, 1.5};
-    spp.setQ(Q4);
+    Vector P4 = {1.0, 1.0};
+    spp.setP(P4)
 
     // 2 - add oscillators to system
     System s(&t, new IntegratorEuler());

@@ -4,7 +4,7 @@ OscilloSim is a program that allows to simulate the time evolution of different 
 - ``WeightedPendulum`` : A simple pendulum. A weight is a attached to end of a rod of fixed length and can swing freely or with friction. The pendulum is subject to gravity. It has one degree of freedom, the angle of the rod with respect to the vector defined by gravity. 
 - ``DoublePendulum`` : Two rods and two weights. The second mass is attached to the end of the second rod which can swing freely around the first mass. The pendulum is subject to gravity. It has two degrees of freedom, the angle of the first rod with respect to the vector defined by gravity and the angle of the second rod with respect to the first rod.
 - ``Spring`` : A simple spring with a mass. The length at rest is zero. The spring is forced to oscillate along an axis. There may be friction involved. The pendulum is subject to gravity. It has one degree of freedom, the position along the direction of the axis formed by the spring.
-- ``SpringPendulum`` : A spring that is free to oscillate in a two dimensional plane. It has a non-zero length at rest. The pendulum is subject to gravity. It has two degrees of freedom, the angle of the spring with respect to the vector defined by gravity and the position along the direction of the axis formed by the spring.
+- ``SpringPendulum`` : A spring that is free to oscillate in a two dimensional plane. It has a non-zero length at rest. The pendulum is subject to gravity. It has two degrees of freedom, the x and y positions of the mass at the end of the spring.
 
 The time evolution computations are performed using integrators. There are 4 integrators available for use:
 - `IntegratorEuler` : A Euler integrator.
@@ -52,8 +52,8 @@ Vector Q3 = {-1.0};
 sp.setQ(Q3);
 
 SpringPendulum spp("springpendulum", &t, 1.0, 1.0, 1.0);
-Vector Q4 = {3.14, 1.5};
-spp.setQ(Q4);
+Vector P4 = {1.0, 1.0};
+spp.setP(P4)
 
 // 2 - add oscillators to system
 System s(&t, new IntegratorEuler());
