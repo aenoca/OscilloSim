@@ -117,5 +117,5 @@ In the Qt console, in the base folder,
 
 A window like to following should open:
 
-![The homepage of OscilloSim software. One can see a representation of the 4 oscillators.](/../pics/homepage.JPG)
+![The homepage of OscilloSim software. One can see a representation of the 4 oscillators.](../pics/homepage.jpg)
 
