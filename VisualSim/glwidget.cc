@@ -42,6 +42,7 @@ void GLWidget::operator+=(Oscillator const& o)
 void GLWidget::showWindow()
 {
     this->show();
+    timerId = startTimer(20);
     timer.start();
 }
 
@@ -50,7 +51,6 @@ void GLWidget::showWindow()
 void GLWidget::initializeGL()
 {
   view.init();
-  timerId = startTimer(20);
   setMouseTracking(true);
 }
 
@@ -240,14 +240,17 @@ void GLWidget::closeEvent(QCloseEvent *event)
     s.empty();
     //
     view.initializePosition();
-    //set time to zero
-    time = 0;
+    
     //kill timer
     if(timerId != 0)
     {
         killTimer(timerId);
         timerId = 0;
     }
+
+    //set time to zero
+    time = 0;
+    timer.invalidate();
 
 
     emit on_Close();
