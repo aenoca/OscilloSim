@@ -116,6 +116,18 @@ In the Qt console, in the base folder,
 3. cd into the ``VisualSim/release`` folder and execute the ``OscilloSim`` executable. 
 
 A window like to following should open:
-
 ![The homepage of OscilloSim software. One can see a representation of the 4 oscillators.](pics/homepage.JPG)
+
+When you click on the ``next`` button, we get to the page to select oscillators. They are the following:
+
+![Pendulum Page](pics/WeightedPendulum.JPG)
+
+![Pendulum Page](pics/DoublePendulum.JPG)
+
+![Pendulum Page](pics/Spring.JPG)
+
+![Pendulum Page](pics/SpringPendulum.JPG)
+
+
+
 
