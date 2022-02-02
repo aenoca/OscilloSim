@@ -230,6 +230,8 @@ void GLWidget::timerEvent(QTimerEvent* event)
 
   s.evolve(dt, time);
   update();
+  view.draw(s);
+  
 }
 
 void GLWidget::closeEvent(QCloseEvent *event)

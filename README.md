@@ -98,7 +98,7 @@ SpringPendulum(std::string n, DrawingSupport* supp, double masse, double cst, do
 
 The ``string n`` argument is the name of the oscillator, which is then used for the name of the output files. The ``DrawingSupport* supp`` defines the medium through which the simulation is saved or displayed. The ``Vector A``, combined with the vector of gravity ``g = {0, 0, -9.81}`` forms the plane in which the oscillators evolve. Additionally, a ``Spring`` is forced to oscillate along the direction of this vector. The ``Vector o`` defines the origin of the oscillator, i.e., the point around which it swings. For ``Spring`` and ``SpringPendulum``, the ``cst`` value is the spring constant. 
 
-It is possible to set the positions and the velocities of the oscillators using ``setP(Vector)`` and ``setQ(Vector)``. The size of the ``Vector`` must be the same as the number of degrees of freedom of the oscillator. If the original value is an angle, then its corresponding velocity is an angular velocity. 
+It is possible to set the positions and the velocities of the oscillators using ``setP(Vector)`` and ``setQ(Vector)``. It is important to know that the position is always defined with respect to the origin. The size of the ``Vector`` must be the same as the number of degrees of freedom of the oscillator. If the original value is an angle, then its corresponding velocity is an angular velocity. 
 
 In the second part, we define a ``System``, which contains oscillators. It is initialized with an Integrator. The respective oscillators are then added to the system. The system is drawn once. In this case, it means it outputs the positions and velocities of each oscillator in the system to a file.
 
@@ -122,12 +122,48 @@ When you click on the ``next`` button, we get to the page to select oscillators.
 
 ![Pendulum Page](pics/WeightedPendulum.JPG)
 
-![Pendulum Page](pics/DoublePendulum.JPG)
+![Spring Page](pics/Spring.JPG)
 
-![Pendulum Page](pics/Spring.JPG)
+![Double Pendulum Page](pics/DoublePendulum.JPG)
 
-![Pendulum Page](pics/SpringPendulum.JPG)
-
-
+![Spring Pendulum Page](pics/SpringPendulum.JPG)
 
 
+The vector O is the fixing point of the oscillator. The vector A is has two purposes : 
+- for the pendulums and the spring pendulum, it defines the plane in which the oscillators evolve (also using the direction of gravity).
+- for the spring, it defines the direction along which the oscillation occurs. 
+
+The position/velocity vector has different meanings : 
+- For the Pendulum, the position is the angle in radians between the rod and the direction of gravity. The velocity is simply the angular velocity. 
+- For the Spring, the position in meters is the distance from the fixing point along the vector A. It should not be set to zero. The velocity is the change in position along the vector A. 
+- For the DoublePendulum, the first element of the position is the angle in radians between the rod and the direction of gravity. The second element of the position is the angle in radians between the second rod and the first rod. The velocity is simply the time derivative of the angles. 
+- For the SpringPendulum, the position has two entries in meters. The second is the distance along the direction of gravity. The first is the distance from the origin along the plane formed by gravity and the vector A, and perpendicular to the vector of gravity. The position should not be zero. 
+
+For the two springs, the position is given with respect to the fixing point.
+
+In order to launch a simulation with an oscillator, one must specify the initial conditions and the properties of the oscillator. Then, one presses the ``Add`` button. If the one wishes to remove the oscillator, one can press the ``Remove last`` button. Finally, when all oscillators of interest (can add any type of oscillator at the same time) are added, one can choose the integrator and then launch the simulation. When the simulation is launched, a new window opens with the oscillators. There are a few controls to move around in the rendering window:
+
+- home : return to initial view.
+- space : pause/restart the simulation.
+- click and drag mouse : rotation around current position depending on motion of mouse.
+- scroll : move in or out of view.
+- arrows : small rotation around current position.
+
+- s : move back in the view.
+- w : move forward in the view.
+- a : move left in the view.
+- d : move right in the view.
+- r : move up in the view.
+- f : move down in the view.
+- q : roll left around axis colinear with view.
+- e : roll right around axis colinear with view.
+
+- j : use Euler integrator.
+- u : use Euler-cromer integrator.
+- n : use Newmark integrator.
+- k : use Runge-Kutta integrator.
+
+If one presses the ``launch`` button again while the simulation is ongoing, this updates the integrator to the current selection.
+
+
+# need to add influence of origin on equation of movement for springs
