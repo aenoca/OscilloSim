@@ -175,3 +175,8 @@ The white object is a DoublePendulum, the blue object is a WeightedPendulum, the
 This project was done using the Open-source version of Qt and is not meant for lucrative ventures.
 
 The project was originally done using QT4, and was transferred to QT6. There is some functionality that does not work in this version for reasons yet unknown (there used to be a grid to better visualize the oscillators).
+
+
+Aurelio Noca
+
+Louis Jaugey
